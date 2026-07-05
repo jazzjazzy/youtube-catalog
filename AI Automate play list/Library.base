@@ -1,0 +1,103 @@
+filters:
+  and:
+    - file.inFolder("videos")
+formulas:
+  thumbnail: if(video_id, "https://i.ytimg.com/vi/" + video_id + "/hqdefault.jpg")
+properties:
+  file.name:
+    displayName: Video
+  note.channel:
+    displayName: Channel
+  note.type:
+    displayName: Type
+  note.difficulty:
+    displayName: Difficulty
+  note.uploaded:
+    displayName: Uploaded
+  note.processed:
+    displayName: Added
+  note.duration:
+    displayName: Length
+  note.tools:
+    displayName: Tools
+  note.llms:
+    displayName: LLMs
+  note.use_case:
+    displayName: Use case
+views:
+  - type: table
+    name: All videos
+    order:
+      - file.name
+      - channel
+      - type
+      - difficulty
+      - uploaded
+      - duration
+      - tools
+      - llms
+    sort:
+      - property: processed
+        direction: DESC
+  - type: cards
+    name: Gallery
+    order:
+      - file.name
+      - channel
+      - type
+      - difficulty
+    sort:
+      - property: uploaded
+        direction: DESC
+    image: formula.thumbnail
+  - type: table
+    name: By type
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - file.name
+      - channel
+      - difficulty
+      - uploaded
+    sort:
+      - property: uploaded
+        direction: DESC
+  - type: table
+    name: By difficulty
+    groupBy:
+      property: difficulty
+      direction: ASC
+    order:
+      - file.name
+      - channel
+      - type
+      - uploaded
+    sort:
+      - property: uploaded
+        direction: DESC
+  - type: table
+    name: By use case
+    groupBy:
+      property: use_case
+      direction: ASC
+    order:
+      - file.name
+      - channel
+      - type
+      - difficulty
+    sort:
+      - property: uploaded
+        direction: DESC
+  - type: table
+    name: Missing transcript
+    filters:
+      and:
+        - transcript == false
+    order:
+      - file.name
+      - channel
+      - uploaded
+    sort:
+      - property: processed
+        direction: DESC
