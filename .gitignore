@@ -1,0 +1,27 @@
+.git/
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+.cache/
+__pycache__/
+*.pyc
+.venv/
+venv/
+tools/yt_mcp_venv/
+.opencode/
+ses_*
+.ses_*
+**/ses_*
+**/.ses_*
+*.log
+.env
+.env.*
+
+# local Claude Code settings
+.claude/settings.local.json
+
+# Obsidian per-user workspace state
+.obsidian/
+**/.obsidian/

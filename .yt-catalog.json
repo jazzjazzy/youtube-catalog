@@ -1,0 +1,10 @@
+{
+  "vault_path": "/home/jason/Workspace/youtube-catalog/YouTube_AI_Vault",
+  "chrome_profile": "~/.cache/chrome-devtools-mcp/chrome-profile",
+  "default_playlist": "PLSP2m5K_gemMvUCK2g6LsGje56iV0zYUx",
+  "extractor": "claude",
+  "venv_path": "~/.yt-catalog/venv",
+  "transcript_languages": ["en"],
+  "skip_processed": true,
+  "vpn": "off"
+}
